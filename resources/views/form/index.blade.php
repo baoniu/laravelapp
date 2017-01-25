@@ -3,7 +3,10 @@
 @section('content')
     <div class="jumbotron">
         <div class="container">
-            <h1>Hello, world! <a class="btn btn-primary btn-lg pull-right" href="#" role="button">Learn more »</a></h1>
+            <h2>
+                欢迎来到Laravel Appp社区
+                <a class="btn btn-primary btn-lg pull-right" href="#" role="button">发布新帖子</a>
+            </h2>
         </div>
     </div>
 
