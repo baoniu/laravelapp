@@ -5,7 +5,7 @@
         <div class="container">
             <h2>
                 欢迎来到Laravel Appp社区
-                <a class="btn btn-primary btn-lg pull-right" href="#" role="button">发布新帖子</a>
+                <a class="btn btn-primary btn-md pull-right" href="/discussions/create" role="button">发布新帖子</a>
             </h2>
         </div>
     </div>
@@ -21,7 +21,15 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">{{ $discussion->title }}</h4>
+                            <h4 class="media-heading">
+                                <a href="/discussions/{{ $discussion->id }}">{{ $discussion->title }}</a>
+                                <div class="media-conversation-meta">
+                                    <span class="media-conversation-replies">
+                                        <a href="/discussions/{{ $discussion->id }}#reply">{{count($discussion->comments)}}</a>
+                                        回复
+                                    </span>
+                                </div>
+                            </h4>
                             {{ $discussion->user->name }}
                         </div>
                     </div>

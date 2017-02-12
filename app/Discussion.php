@@ -12,4 +12,8 @@ class Discussion extends Model
     {
         return $this->belongsTo(User::class, 'user_id');   //$discussion->user  ,第二个参数默认是user_id, 根据数据库设置 变化
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

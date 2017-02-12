@@ -18,6 +18,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'confirm_code' => str_random(48),
         'avatar'=> $faker->imageUrl(256,256),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
@@ -31,5 +32,16 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
         'body' => $faker->paragraph,
         'user_id'=> $faker->randomElement($user_ids),
         'last_user_id' => $faker->randomElement($user_ids),
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::pluck('id')->toArray();
+    $discussion_ids = \App\Discussion::pluck('id')->toArray();
+
+    return [
+        'body' => $faker->paragraph,
+        'user_id' => $faker->randomElement($user_ids),
+        'discussion_id' => $faker->randomElement($discussion_ids)
     ];
 });
