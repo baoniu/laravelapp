@@ -19,6 +19,7 @@ class CreateDiscussionsTable extends Migration
             $table->text('body');
             $table->integer('user_id')->unsigned();
             $table->integer('last_user_id')->unsigned();
+            $table->tinyInteger('published')->unsigned()->default(1);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

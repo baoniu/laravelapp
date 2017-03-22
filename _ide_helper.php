@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.11 on 2017-02-12.
+ * Generated for Laravel 5.4.11 on 2017-02-13.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12174,6 +12174,29 @@ namespace {
         }
         
         /**
+         * Start prepending content into a push section.
+         *
+         * @param string $section
+         * @param string $content
+         * @return void 
+         * @static 
+         */
+        public static function startPrepend($section, $content = ''){
+            \Illuminate\View\Factory::startPrepend($section, $content);
+        }
+        
+        /**
+         * Stop prepending content into a push section.
+         *
+         * @return string 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function stopPrepend(){
+            return \Illuminate\View\Factory::stopPrepend();
+        }
+        
+        /**
          * Get the string contents of a push section.
          *
          * @param string $section
@@ -13188,6 +13211,33 @@ namespace {
          */
         public static function cache($callback, $lifetime = null, $returnObj = false){
             return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+        
+    }
+
+
+    class EndaEditor extends \YuanChao\Editor\Facade\EndaEditorFacade{
+        
+        /**
+         * EndaEditor Upload ImgFile
+         *
+         * @param string $path
+         * @return array 
+         * @static 
+         */
+        public static function uploadImgFile($path){
+            return \YuanChao\Editor\EndaEditor::uploadImgFile($path);
+        }
+        
+        /**
+         * 转换 mark 文本
+         *
+         * @param $markdownText
+         * @return string 
+         * @static 
+         */
+        public static function MarkDecode($markdownText){
+            return \YuanChao\Editor\EndaEditor::MarkDecode($markdownText);
         }
         
     }

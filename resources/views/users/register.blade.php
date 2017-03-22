@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-md-offset-3" role="main">
+            <div class="col-md-6 col-md-offset-3" role="main">
                 @if($errors->any())
                     <ul class="list-group">
                         @foreach($errors->all() as $error)

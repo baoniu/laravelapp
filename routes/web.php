@@ -32,3 +32,8 @@ Route::post('/crop/api', 'UsersController@cropAvatar');
 Route::post('/post/upload', 'PostsController@upload');
 
 Route::get('/logout', 'UsersController@logout');
+
+
+Route::get('oauth', 'OAuthController@oauth');
+
+Route::get('callback', 'OAuthController@callback');

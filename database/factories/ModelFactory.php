@@ -30,6 +30,7 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence,
         'body' => $faker->paragraph,
+        'published' => $faker->numberBetween(0,1),
         'user_id'=> $faker->randomElement($user_ids),
         'last_user_id' => $faker->randomElement($user_ids),
     ];

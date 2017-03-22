@@ -47,6 +47,7 @@
                         <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" width="50px;" class="img-circle">
                     </li>
                 @else
+                    <li><a href="/admin/login">管理登录</a></li>
                     <li><a href="/user/login">登录</a></li>
                     <li><a href="/user/register">注册</a></li>
                 @endif
